@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Colors">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+    <!-- Title -->
+    <title>Admixture - Material Admin Template</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="img/core-img/favicon.ico">
+
+    <!-- Master Stylesheet [If you remove this CSS file, your file will be broken undoubtedly.] -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="page-wrapper">
+
+        <!-- WRAPPER -->
+        <div class="wrapper">
+            <!-- COMING SOON -->
+            <div class="coming ui-hero hero-center ui-tittle c-animator overflow-hidden">
+                <!-- CONTAINER -->
+                <div class="container-coming">
+                    <h2 class="heading font-color-white">Coming Soon</h2>
+                    <p class="paragraph mb-50">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididun!</p>
+                    <!-- CLOCK -->
+                    <div id="clock">
+                        <div class="days">
+                            <p class="label">Days</p>
+                        </div>
+                        <div class="hours">
+                            <p class="label">Hours</p>
+                        </div>
+                        <div class="seconds">
+                            <p class="label">Seconds</p>
+                        </div>
+                    </div>
+                    <!-- CARD EMAIL -->
+                    <div class="ui-card form-email shadow-card mt-50">
+                        <div class="header-card">
+                            <h4 class="heading-text">We will notify you</h4>
+                        </div>
+                        <div class="body-card">
+                            <!-- FORM -->
+                            <form class="callback" action="#" method="post">
+                                <div class="form-group mb-0">
+                                    <div class="input-group">
+                                        <input class="input-form-mail" type="text" name="mail" value="" placeholder="E-mail" required data-validation-error-msg="Coloca tu email">
+                                    </div>
+                                    <!-- Submit -->
+                                    <div class="coming-group-btn">
+                                        <button class="submit-" type="submit"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <!-- Coming Soon Area End  -->
+
+    <!-- ======== Must needed plugins to the run this template ======= -->
+    <script src="assets/js/jquery/jquery.2.2.4.min.js"></script>
+    <script src="assets/js/bootstrap/popper.min.js"></script>
+    <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+    <script src="js/plugins-js/menu-active.js"></script>
+    <script src="js/plugins-js/plugins-js/plugins.js"></script>
+    <script src="js/plugins-js/plugins-js/materialize.js"></script>
+    <script src="js/box-switch.js"></script>
+
+    <script src="js/fullscreen.js"></script>
+    <script src="js/nicescroll.min.js"></script>
+    <script src="js/active.js"></script>
+    <!-- this plugins only for demo purpose -->
+    <script src="js/settings.js"></script>
+    <!-- ======== /. Must needed plugins to the run this template ======= -->
+
+    <script>
+        const getRemainingTime = deadline => {
+            let now = new Date(),
+                remainTime = (new Date(deadline) - now + 1000) / 1000,
+                remainSeconds = ('0' + Math.floor(remainTime % 60)).slice(-2),
+                remainMinutes = ('0' + Math.floor(remainTime / 60 % 60)).slice(-2),
+                remainHours = ('0' + Math.floor(remainTime / 3600 % 24)).slice(-2),
+                remainDays = Math.floor(remainTime / (3600 * 24));
+
+            return {
+                remainSeconds,
+                remainMinutes,
+                remainHours,
+                remainDays,
+                remainTime
+            }
+        };
+        const countdown = (deadline, elem, finalMessage) => {
+            const el = document.getElementById(elem);
+
+            const timerUpdate = setInterval(() => {
+                let t = getRemainingTime(deadline);
+                el.innerHTML =
+                    `<div class="label">${t.remainDays}<div class="clock-text">Days</div></div>
+   <div class="hours label">${t.remainHours}<div class="clock-text">Hours</div></div>
+   <div class="minutes label">${t.remainMinutes}<div class="clock-text">Minutes</div></div>
+   <div class="seconds label">${t.remainSeconds}<div class="clock-text">Seconds</div></div>`;
+                if (t.remainTime <= 1) {
+                    clearInterval(timerUpdate);
+                    el.innerHTML = finalMessage;
+                }
+            }, 500)
+        };
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,100 @@
+select s.studentID AS studentID,
+s.Image AS Image,
+s.Lastname AS Lastname,
+s.Firstname AS Firstname,
+s.gender AS Gender,
+c.CourseID AS CourseID,
+c.CourseName AS CourseName,
+c.FeePayable AS FeePayable
+from 
+student s left join course c on s.studentID = c.CourseID
+
+
+<script>
+      function getQueryVariable(variable)
+        {
+         var query = window.location.search.substring(1);
+         var vars = query.split("&");
+         for (var i=0;i<vars.length;i++) {
+                 var pair = vars[i].split("=");
+                 if(pair[0] == variable){return pair[1];}
+        }
+       return(false);
+}
+    </script>
+
+
+    <script>
+      //var fullURL = document.url;
+      //var urlArray = fullURL.split('=');
+      //var lastSegment = urlArray[urlArray.length - 1];
+      //alert(lastSegment);
+    </script>
+
+    select admin.Id AS Id,
+    admin.Name AS Name,
+    admin.Email AS Email,
+    admin.Password AS Password,
+    admin.Mobile AS Mobile,
+    admin.Gender AS Gender,
+    admin.Image AS Image,
+    admin.DOB AS DOB,
+    admin.Role AS Role 
+    from admin union select teacher.Id AS Id,teacher.Name AS Name,teacher.Email AS Email,teacher.Password AS Password,teacher.Mobile AS Mobile,teacher.Gender AS Gender,teacher.Image AS Image,teacher.DOB AS DOB,teacher.Role AS Role from teacher union select accountant.Id AS Id,accountant.Name AS Name,accountant.Email AS Email,accountant.Password AS Password,accountant.Mobile AS Mobile,accountant.Gender AS Gender,accountant.Image AS Image,accountant.DOB AS DOB,accountant.Role AS Role from accountant union select student.studentID AS Id,student.Firstname AS Name,student.email AS Email,student.password AS Password,student.mobile AS Mobile,student.gender AS Gender,student.Image AS Image,student.dateofbirth AS DOB,student.Role AS Role from student ;
+
+
+
+
+
+
+
+
+
+SELECT
+  t.Id AS ID,
+  t.Image as Image,
+  t.Name AS Full_Name,
+  t.Gender AS Gender,
+  t.Mobile AS Mobile,
+  t.department AS Department,
+  t.Role AS Role,
+  t.Address AS Address,
+  t.Email AS E-Mail,
+  t.Password AS Password,
+  t.DOB AS DOB,
+  t.appointmentDate AS Appointment_Date 
+  FROM teacher
+  UNION
+  SELECT
+  ad.Id AS ID,
+  ad.Image as Image,
+  ad.Name AS Full_Name,
+  ad.Gender AS Gender,
+  ad.Mobile AS Mobile,
+  ad.department AS Department,
+  ad.Role AS Role,
+  ad.Address AS Address,
+  ad.Email AS E-Mail,
+  ad.Password AS Password,
+  ad.DOB AS DOB,
+  ad.appointmentDate AS Appointment_Date 
+  FROM admin
+  UNION
+  SELECT
+  ac.Id AS ID,
+  ac.Image as Image,
+  ac.Name AS Full_Name,
+  ac.Gender AS Gender,
+  ac.Mobile AS Mobile,
+  ac.department AS Department,
+  ac.Role AS Role,
+  ac.Address AS Address,
+  ac.Email AS E-Mail,
+  ac.Password AS Password,
+  ac.DOB AS DOB,
+  ac.appointmentDate AS Appointment_Date 
+  FROM accountant
+
+
+
+

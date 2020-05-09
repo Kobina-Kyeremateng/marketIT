@@ -1,0 +1,2 @@
+When editing the student, course ID comes instead of the name
+The proile.php has some javascript codes, try understand
